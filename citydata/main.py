@@ -25,7 +25,9 @@ for i in range(1,2):
     # TODO: Iterate through all time segments 1:144, count nulls in 'Driver_id' -> equivalent to gapij
     for t_segment in range(1,145):
         records = order_data['Driver_id'][order_data['Segment'] == t_segment]
-        print records.head()
+        demand = records.size
+        gap = demand - records.count()
+        print demand, gap
 
 
 
